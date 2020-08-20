@@ -1,0 +1,11 @@
+#!/bin/sh
+# Define Deno code fetch and cache dir
+export DENO_DIR=/tmp
+
+# Unset proxy
+unset http_proxy
+unset https_proxy
+
+# Run entry file
+deno run --allow-net --allow-env entry.js
+

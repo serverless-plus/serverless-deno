@@ -1,0 +1,26 @@
+{
+  "name": "serverless-deno",
+  "version": "0.1.0",
+  "description": "Serverless Deno Application on Tencent SCF using Custom Runtime.",
+  "scripts": {
+    "dev": "denon run --allow-net --allow-env ./src/start.ts",
+    "bundle": "deno bundle entry.ts entry.js",
+    "deploy": "npm run bundle && serverless deploy",
+    "deploy:layer": "serverless deploy --target=./layer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yugasun/serverless-deno.git"
+  },
+  "keywords": [
+    "serverless",
+    "deno",
+    "serverless-components"
+  ],
+  "author": "yugasun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yugasun/serverless-deno/issues"
+  },
+  "homepage": "https://github.com/yugasun/serverless-deno#readme"
+}

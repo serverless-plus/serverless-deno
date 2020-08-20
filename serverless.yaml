@@ -1,0 +1,28 @@
+org: serverless-deno
+app: serverless-deno
+stage: dev
+
+component: scf@dev # 目前还在内测阶段，所以还是 dev 版本
+name: serverless-deno
+
+inputs:
+  src: ./
+  region: ${env:REGION}
+  runtime: CustomRuntime
+  initTimeout: 10
+  handler: entry.ts
+  layers:
+    - name: ${output:${stage}:${app}:${name}-layer.name}
+      version: ${output:${stage}:${app}:${name}-layer.version}
+  events:
+    - apigw:
+        parameters:
+          protocols:
+            - http
+            - https
+          environment: release
+          endpoints:
+            - path: /
+              method: GET
+              function:
+                isIntegratedResponse: true

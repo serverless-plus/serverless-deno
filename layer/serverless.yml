@@ -1,0 +1,13 @@
+org: serverless-deno
+app: serverless-deno
+stage: dev
+
+component: layer
+name: serverless-deno-layer
+
+inputs:
+  region: ${env:REGION}
+  name: ${name}
+  src: ./
+  runtimes:
+    - CustomRuntime
