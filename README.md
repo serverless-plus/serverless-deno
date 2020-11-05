@@ -1,6 +1,6 @@
 # Serverless Deno
 
-[Demo](https://service-7sliwodg-1251556596.gz.apigw.tencentcs.com)
+[Demo](https://service-gcgex6z2-1251556596.gz.apigw.tencentcs.com)
 
 Serverless Deno Application on Tencent SCF using Custom Runtime.
 

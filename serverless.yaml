@@ -6,7 +6,11 @@ component: scf@dev # 目前还在内测阶段，所以还是 dev 版本
 name: serverless-deno
 
 inputs:
-  src: ./
+  src:
+    src: ./
+    exclude:
+      - .env
+      - 'layer/**'
   region: ${env:REGION}
   runtime: CustomRuntime
   initTimeout: 10
