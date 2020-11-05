@@ -2,17 +2,19 @@ org: serverless-deno
 app: serverless-deno
 stage: dev
 
-component: scf@dev # 目前还在内测阶段，所以还是 dev 版本
+component: scf
 name: serverless-deno
 
 inputs:
   src:
     src: ./
     exclude:
-      - .env
+      - '.env'
+      - '.git/**'
       - 'layer/**'
   region: ${env:REGION}
   runtime: CustomRuntime
+  name: ${name}
   initTimeout: 10
   handler: entry.ts
   layers:
